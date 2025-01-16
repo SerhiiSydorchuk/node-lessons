@@ -28,5 +28,11 @@
     "name": "Sergey",
     "email": "BigBoss@gmail.com",
     "password": "ccc322"
+  },
+  {
+    "id": 9,
+    "name": "Serhii 22",
+    "email": "sydorchuks93@gmail.com",
+    "password": "123456789"
   }
 ]
