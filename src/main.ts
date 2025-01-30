@@ -1,10 +1,9 @@
-import dotenv from "dotenv";
 import express, { NextFunction, Request, Response } from "express";
+import * as mongoose from "mongoose";
 
+import { configs } from "./configs/config";
 import { ApiError } from "./errors/ApiError";
 import { userRouter } from "./routers/user.routers";
-
-dotenv.config({ path: ".env" });
 
 const app = express();
 
@@ -97,7 +96,7 @@ app.use(
   },
 );
 
-const port = process.env.PORT;
-app.listen(port, () => {
-  console.log(`Server has been started on port ${port}`);
+app.listen(configs.port, async () => {
+  await mongoose.connect(configs.mongoUri);
+  console.log(`Server has been started on port ${configs.port}`);
 });
